@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Total Votes BY LGA {% endblock %}</h1>
+    <div class="content">
+      <h2><p><b>Total votes: {{ response['total'] }}</b></p></h2><br/>
+        {% for party in response['polling_units'] %}
+            <div class="student">
+                <p><b>{{ party[0] }}: {{ party[1] }}</b></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

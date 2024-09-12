@@ -37,12 +37,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    conn = sqlite3.connect('bincomphptest.db')
-    c = conn.cursor()
-    c.execute('SELECT * FROM polling_unit ORDER BY polling_unit_id')
-    poll = c.fetchall()
-    conn.close()
-    return render_template('index.html', poll=poll)
+    return 1
 
 @app.route('/polling_units/<int:id>')
 def polling_unit(id):
